@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useApp } from "../../context/AppContext";
-
+import type { Location } from "react-router-dom";
 import UrlTableHeader from "./UrlTableHeader";
 import UrlTableRow from "./UrlTableRow";
 
@@ -17,7 +17,7 @@ export default function UrlTable() {
   } = useApp();
 
   const observerRef = useRef<HTMLDivElement | null>(null);
-  const location = useLocation();
+  const location: Location = useLocation();
 
 //   REFRESH ON DASHBOARD ENTRY
   useEffect(() => {
