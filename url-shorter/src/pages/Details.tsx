@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import QRCode from "react-qr-code";
 import DetailsHeader from "../Components/DetailsHeader";
 
@@ -12,7 +12,6 @@ import { api } from "../api/urls";
 
 export default function Details() {
   const { code } = useParams<{ code: string }>();
-  const navigate = useNavigate();
 
   const [url, setUrl] = useState<UrlDetails | null>(null);
   const [analytics, setAnalytics] = useState<AnalyticsResponse | null>(null);
